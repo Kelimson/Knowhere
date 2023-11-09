@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int Check1(int x,int y,int z){
+  if(x*x==y*y+z*z){
+    return 1;
+  }else{
+    return 0;
+  }
+}
+int Check2(int x,int y,int z){
+	if(Check1(x,y,z)||Check1(y,x,z)||Check1(z,x,y)){
+	  return 1;
+	}else{
+	  return 0;
+	}
+}
+int main()
+{
+	int a,b,c;
+	while(scanf("%d%d%d",&a,&b,&c)!=EOF){
+	  if(Check2(a,b,c)){
+		  printf("yes\n");
+	  }else{
+	    printf("no\n");
+	  }
+	}
+}
